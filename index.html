@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON GRID - Instagram AIO Suite</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@300;400;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particle-bg"></div>
+    
+    <!-- Main Container -->
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24" class="logo-svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h1 class="app-title">NEON GRID</h1>
+                    <span class="app-subtitle">Instagram AIO Suite v2.0</span>
+                </div>
+                
+                <div class="header-controls">
+                    <div class="status-indicator">
+                        <div class="status-dot"></div>
+                        <span class="status-text">SYSTEM ONLINE</span>
+                    </div>
+                    <button class="theme-toggle" id="themeToggle">
+                        <svg viewBox="0 0 24 24" class="theme-icon">
+                            <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <nav class="nav-menu">
+                    <div class="nav-section">
+                        <h3 class="nav-title">CORE MODULES</h3>
+                        <ul class="nav-list">
+                            <li><button class="nav-item active" data-module="dashboard">
+                                <svg viewBox="0 0 24 24" class="nav-icon"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+                                <span>Dashboard</span>
+                            </button></li>
+                            <li><button class="nav-item" data-module="account-checker">
+                                <svg viewBox="0 0 24 24" class="nav-icon"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                <span>Account Checker</span>
+                            </button></li>
+                            <li><button class="nav-item" data-module="follow-bot">
+                                <svg viewBox="0 0 24 24" class="nav-icon"><path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0018.54 8H17c-.8 0-1.54.37-2.01 1l-4.7 6.3c-.3.4-.49.88-.49 1.4V20c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2z"/></svg>
+                                <span>Follow Bot</span>
+                            </button></li>
+                            <li><button class="nav-item" data-module="like-bot">
+                                <svg viewBox="0 0 24 24" class="nav-icon"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                                <span>Like Bot</span>
+                            </button></li>
+                            <li><button class="nav-item" data-module="comment-bot">
+                                <svg viewBox="0 0 24 24" class="nav-icon"><path d="M21.99 4c0-1.1-.89-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+                                <span>Comment Bot</span>
+                            </button></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="nav-section">
+                        <h3 class="nav-title">UTILITIES</h3>
+                        <ul class="nav-list">
+                            <li><button class="nav-item" data-module="username-checker">
+                                <svg viewBox="0 0 24 24" class="nav-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                                <span>Username Checker</span>
+                            </button></li>
+                            <li><button class="nav-item" data-module="grab-avatars">
+                                <svg viewBox="0 0 24 24" class="nav-icon"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                <span>Grab Avatars</span>
+                            </button></li>
+                            <li><button class="nav-item" data-module="stories-viewer">
+                                <svg viewBox="0 0 24 24" class="nav-icon"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                                <span>Stories Viewer</span>
+                            </button></li>
+                            <li><button class="nav-item" data-module="downloads">
+                                <svg viewBox="0 0 24 24" class="nav-icon"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                <span>Downloads</span>
+                            </button></li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard Module -->
+                <div class="module-content active" id="dashboard">
+                    <div class="module-header">
+                        <h2 class="module-title">System Dashboard</h2>
+                        <p class="module-description">Monitor your Instagram automation operations</p>
+                    </div>
+                    
+                    <div class="dashboard-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg viewBox="0 0 24 24"><path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0018.54 8H17c-.8 0-1.54.37-2.01 1l-4.7 6.3c-.3.4-.49.88-.49 1.4V20c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2z"/></svg>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-value" id="followCount">0</h3>
+                                <p class="stat-label">Accounts Followed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-value" id="likeCount">0</h3>
+                                <p class="stat-label">Posts Liked</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg viewBox="0 0 24 24"><path d="M21.99 4c0-1.1-.89-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-value" id="commentCount">0</h3>
+                                <p class="stat-label">Comments Posted</p>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-value" id="checkCount">0</h3>
+                                <p class="stat-label">Accounts Checked</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-panel">
+                        <h3 class="panel-title">Recent Activity</h3>
+                        <div class="activity-log" id="activityLog">
+                            <div class="log-entry">
+                                <span class="log-time">[12:34:56]</span>
+                                <span class="log-message">System initialized successfully</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Checker Module -->
+                <div class="module-content" id="account-checker">
+                    <div class="module-header">
+                        <h2 class="module-title">Account Checker</h2>
+                        <p class="module-description">Verify Instagram account validity and status</p>
+                    </div>
+                    
+                    <div class="module-grid">
+                        <div class="input-panel">
+                            <h3 class="panel-title">Input Configuration</h3>
+                            <div class="input-group">
+                                <label for="comboFile">Combo List File</label>
+                                <input type="file" id="comboFile" accept=".txt" class="file-input">
+                                <div class="file-preview" id="comboPreview">No file selected</div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="proxyList">Proxy List (Optional)</label>
+                                <input type="file" id="proxyList" accept=".txt" class="file-input">
+                                <div class="file-preview" id="proxyPreview">No file selected</div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="checkDelay">Check Delay (seconds)</label>
+                                <input type="number" id="checkDelay" value="2" min="1" max="10" class="number-input">
+                            </div>
+                            
+                            <button class="action-btn primary" id="startChecker">
+                                <svg viewBox="0 0 24 24" class="btn-icon"><path d="M8 5v14l11-7z"/></svg>
+                                Start Checking
+                            </button>
+                        </div>
+                        
+                        <div class="output-panel">
+                            <h3 class="panel-title">Results</h3>
+                            <div class="results-tabs">
+                                <button class="tab-btn active" data-tab="valid">Valid</button>
+                                <button class="tab-btn" data-tab="invalid">Invalid</button>
+                                <button class="tab-btn" data-tab="checked">Checked</button>
+                            </div>
+                            <div class="results-content">
+                                <div class="tab-content active" id="validResults">
+                                    <div class="result-list" id="validList"></div>
+                                </div>
+                                <div class="tab-content" id="invalidResults">
+                                    <div class="result-list" id="invalidList"></div>
+                                </div>
+                                <div class="tab-content" id="checkedResults">
+                                    <div class="result-list" id="checkedList"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Follow Bot Module -->
+                <div class="module-content" id="follow-bot">
+                    <div class="module-header">
+                        <h2 class="module-title">Follow Bot</h2>
+                        <p class="module-description">Automated Instagram following with smart targeting</p>
+                    </div>
+                    
+                    <div class="module-grid">
+                        <div class="input-panel">
+                            <h3 class="panel-title">Bot Configuration</h3>
+                            <div class="input-group">
+                                <label for="targetUsernames">Target Usernames</label>
+                                <textarea id="targetUsernames" placeholder="Enter usernames (one per line)" class="textarea-input"></textarea>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="followDelay">Follow Delay (seconds)</label>
+                                <input type="number" id="followDelay" value="30" min="10" max="300" class="number-input">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="maxFollows">Max Follows per Session</label>
+                                <input type="number" id="maxFollows" value="50" min="1" max="200" class="number-input">
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="smartTargeting" checked>
+                                    <span class="checkmark"></span>
+                                    Smart Targeting
+                                </label>
+                            </div>
+                            
+                            <button class="action-btn primary" id="startFollowBot">
+                                <svg viewBox="0 0 24 24" class="btn-icon"><path d="M8 5v14l11-7z"/></svg>
+                                Start Following
+                            </button>
+                        </div>
+                        
+                        <div class="output-panel">
+                            <h3 class="panel-title">Follow Status</h3>
+                            <div class="status-display">
+                                <div class="status-item">
+                                    <span class="status-label">Status:</span>
+                                    <span class="status-value" id="followStatus">Idle</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Progress:</span>
+                                    <span class="status-value" id="followProgress">0/0</span>
+                                </div>
+                            </div>
+                            <div class="follow-log" id="followLog"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Like Bot Module -->
+                <div class="module-content" id="like-bot">
+                    <div class="module-header">
+                        <h2 class="module-title">Like Bot</h2>
+                        <p class="module-description">Automated Instagram liking with hashtag targeting</p>
+                    </div>
+                    
+                    <div class="module-grid">
+                        <div class="input-panel">
+                            <h3 class="panel-title">Like Configuration</h3>
+                            <div class="input-group">
+                                <label for="targetHashtags">Target Hashtags</label>
+                                <textarea id="targetHashtags" placeholder="Enter hashtags (one per line)" class="textarea-input"></textarea>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="likeDelay">Like Delay (seconds)</label>
+                                <input type="number" id="likeDelay" value="15" min="5" max="60" class="number-input">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="maxLikes">Max Likes per Session</label>
+                                <input type="number" id="maxLikes" value="100" min="1" max="500" class="number-input">
+                            </div>
+                            
+                            <button class="action-btn primary" id="startLikeBot">
+                                <svg viewBox="0 0 24 24" class="btn-icon"><path d="M8 5v14l11-7z"/></svg>
+                                Start Liking
+                            </button>
+                        </div>
+                        
+                        <div class="output-panel">
+                            <h3 class="panel-title">Like Status</h3>
+                            <div class="status-display">
+                                <div class="status-item">
+                                    <span class="status-label">Status:</span>
+                                    <span class="status-value" id="likeStatus">Idle</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Progress:</span>
+                                    <span class="status-value" id="likeProgress">0/0</span>
+                                </div>
+                            </div>
+                            <div class="like-log" id="likeLog"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Comment Bot Module -->
+                <div class="module-content" id="comment-bot">
+                    <div class="module-header">
+                        <h2 class="module-title">Comment Bot</h2>
+                        <p class="module-description">Automated Instagram commenting with custom templates</p>
+                    </div>
+                    
+                    <div class="module-grid">
+                        <div class="input-panel">
+                            <h3 class="panel-title">Comment Configuration</h3>
+                            <div class="input-group">
+                                <label for="commentTemplates">Comment Templates</label>
+                                <textarea id="commentTemplates" placeholder="Enter comment templates (one per line)" class="textarea-input"></textarea>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="targetPosts">Target Posts</label>
+                                <textarea id="targetPosts" placeholder="Enter post URLs (one per line)" class="textarea-input"></textarea>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="commentDelay">Comment Delay (seconds)</label>
+                                <input type="number" id="commentDelay" value="60" min="30" max="300" class="number-input">
+                            </div>
+                            
+                            <button class="action-btn primary" id="startCommentBot">
+                                <svg viewBox="0 0 24 24" class="btn-icon"><path d="M8 5v14l11-7z"/></svg>
+                                Start Commenting
+                            </button>
+                        </div>
+                        
+                        <div class="output-panel">
+                            <h3 class="panel-title">Comment Status</h3>
+                            <div class="status-display">
+                                <div class="status-item">
+                                    <span class="status-label">Status:</span>
+                                    <span class="status-value" id="commentStatus">Idle</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Progress:</span>
+                                    <span class="status-value" id="commentProgress">0/0</span>
+                                </div>
+                            </div>
+                            <div class="comment-log" id="commentLog"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Username Checker Module -->
+                <div class="module-content" id="username-checker">
+                    <div class="module-header">
+                        <h2 class="module-title">Username Checker</h2>
+                        <p class="module-description">Check Instagram username availability</p>
+                    </div>
+                    
+                    <div class="module-grid">
+                        <div class="input-panel">
+                            <h3 class="panel-title">Username List</h3>
+                            <div class="input-group">
+                                <label for="usernameList">Usernames to Check</label>
+                                <textarea id="usernameList" placeholder="Enter usernames (one per line)" class="textarea-input"></textarea>
+                            </div>
+                            
+                            <button class="action-btn primary" id="startUsernameCheck">
+                                <svg viewBox="0 0 24 24" class="btn-icon"><path d="M8 5v14l11-7z"/></svg>
+                                Check Usernames
+                            </button>
+                        </div>
+                        
+                        <div class="output-panel">
+                            <h3 class="panel-title">Results</h3>
+                            <div class="results-tabs">
+                                <button class="tab-btn active" data-tab="available">Available</button>
+                                <button class="tab-btn" data-tab="taken">Taken</button>
+                            </div>
+                            <div class="results-content">
+                                <div class="tab-content active" id="availableResults">
+                                    <div class="result-list" id="availableList"></div>
+                                </div>
+                                <div class="tab-content" id="takenResults">
+                                    <div class="result-list" id="takenList"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grab Avatars Module -->
+                <div class="module-content" id="grab-avatars">
+                    <div class="module-header">
+                        <h2 class="module-title">Avatar Grabber</h2>
+                        <p class="module-description">Download Instagram profile pictures</p>
+                    </div>
+                    
+                    <div class="module-grid">
+                        <div class="input-panel">
+                            <h3 class="panel-title">Target Users</h3>
+                            <div class="input-group">
+                                <label for="avatarUsernames">Usernames</label>
+                                <textarea id="avatarUsernames" placeholder="Enter usernames (one per line)" class="textarea-input"></textarea>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="avatarQuality">Image Quality</label>
+                                <select id="avatarQuality" class="select-input">
+                                    <option value="150">Low (150x150)</option>
+                                    <option value="300" selected>Medium (300x300)</option>
+                                    <option value="600">High (600x600)</option>
+                                </select>
+                            </div>
+                            
+                            <button class="action-btn primary" id="startAvatarGrab">
+                                <svg viewBox="0 0 24 24" class="btn-icon"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                Download Avatars
+                            </button>
+                        </div>
+                        
+                        <div class="output-panel">
+                            <h3 class="panel-title">Download Status</h3>
+                            <div class="avatar-grid" id="avatarGrid"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stories Viewer Module -->
+                <div class="module-content" id="stories-viewer">
+                    <div class="module-header">
+                        <h2 class="module-title">Stories Viewer</h2>
+                        <p class="module-description">View Instagram stories anonymously</p>
+                    </div>
+                    
+                    <div class="module-grid">
+                        <div class="input-panel">
+                            <h3 class="panel-title">Target Users</h3>
+                            <div class="input-group">
+                                <label for="storyUsernames">Usernames</label>
+                                <textarea id="storyUsernames" placeholder="Enter usernames (one per line)" class="textarea-input"></textarea>
+                            </div>
+                            
+                            <button class="action-btn primary" id="startStoryView">
+                                <svg viewBox="0 0 24 24" class="btn-icon"><path d="M8 5v14l11-7z"/></svg>
+                                View Stories
+                            </button>
+                        </div>
+                        
+                        <div class="output-panel">
+                            <h3 class="panel-title">Stories</h3>
+                            <div class="stories-container" id="storiesContainer"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Downloads Module -->
+                <div class="module-content" id="downloads">
+                    <div class="module-header">
+                        <h2 class="module-title">Media Downloader</h2>
+                        <p class="module-description">Download Instagram posts, stories, and highlights</p>
+                    </div>
+                    
+                    <div class="module-grid">
+                        <div class="input-panel">
+                            <h3 class="panel-title">Download Configuration</h3>
+                            <div class="input-group">
+                                <label for="mediaUrls">Media URLs</label>
+                                <textarea id="mediaUrls" placeholder="Enter Instagram URLs (one per line)" class="textarea-input"></textarea>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="downloadQuality">Download Quality</label>
+                                <select id="downloadQuality" class="select-input">
+                                    <option value="low">Low</option>
+                                    <option value="medium" selected>Medium</option>
+                                    <option value="high">High</option>
+                                </select>
+                            </div>
+                            
+                            <button class="action-btn primary" id="startDownload">
+                                <svg viewBox="0 0 24 24" class="btn-icon"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                                Start Download
+                            </button>
+                        </div>
+                        
+                        <div class="output-panel">
+                            <h3 class="panel-title">Download Queue</h3>
+                            <div class="download-queue" id="downloadQueue"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Audio Engine -->
+    <audio id="hoverSound" preload="auto">
+        <source src="assets/sound/hover.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="clickSound" preload="auto">
+        <source src="assets/sound/click.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="successSound" preload="auto">
+        <source src="assets/sound/success.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="errorSound" preload="auto">
+        <source src="assets/sound/error.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/modules.js"></script>
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/audio.js"></script>
+</body>
+</html> 

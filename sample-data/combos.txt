@@ -1,0 +1,10 @@
+user1@example.com:password123
+user2@example.com:password456
+user3@example.com:password789
+testuser1:testpass1
+testuser2:testpass2
+demo_user:demo_pass
+sample_user:sample_pass
+example_user:example_pass
+demo_account:demo_password
+test_account:test_password 
